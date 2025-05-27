@@ -30,7 +30,7 @@ function renderSelector(props: ComponentProps) {}
 let selectedId: number = 0;
 
 function handleSelectItem(item: any) {
-  selectedId = item.id;
+  selectedId = item.id; // item이 any타입이라 id를 뽑아도 에러가 안나지만 runtime 에서 에러남
 }
 
 renderSelector({ onSelectItem: handleSelectItem });
