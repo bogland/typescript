@@ -3,7 +3,7 @@
   > 이를 `구조적 타이핑`이라고도 부름
   > 여러타입 받지 않고 특정 타입만 받도록 하고 싶으면 brand를 붙여야함
 
-```
+```js
 interface Vector3D {
   x: number;
   y: number;
@@ -23,7 +23,7 @@ function calculateLengthL1(v: Vector3D) {
 <해결법>
 brand를 쓰면 다른 타입은 방지하면서 Vector3D의 키값만을 가져서 as [Type]으로 선언후 for of 문을 돌릴수 있음
 
-```
+```js
 interface Vector3D {
   x: number;
   y: number;
@@ -48,7 +48,7 @@ function calculateLengthL1(v: Vector3D) {
 - 구조적 타이핑을 이용한 추상화
   <구체화된 함수, PostgresDB>
 
-```
+```js
 interface Author {
   first: string;
   last: string;
@@ -62,7 +62,7 @@ function getAuthors(database: PostgresDB): Author[] {
 
 <추상화처리, DB>
 
-```
+```js
 interface DB {
   runQuery: (sql: string) => any[];
 }
@@ -75,8 +75,7 @@ function getAuthors(database: DB): Author[] {
 <Text코드 작성 용이>
 구조적 타이핑에 의해서 DB가 가지는 runQuery만 만족하면 어떤 object든 넣어도 타입 에러가 안남
 
-```
-
+```js
 test("getAuthors", () => {
   const authors = getAuthors({
     runQuery: (sql: string) => {
@@ -91,5 +90,4 @@ test("getAuthors", () => {
     { first: "J.", last: "Kinsella" },
   ]);
 });
-
 ```

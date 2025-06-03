@@ -1,6 +1,6 @@
 - 타입 스크립트는 런타임 정확성을 보장하지 않는다.
 
-```
+```js
 const names = ["Alice", "Bob"];
 console.log(names[2].toUpperCase());
 ```
