@@ -1,0 +1,12 @@
+{
+  "name": "easy-typescript",
+  "version": "1.0.0",
+  "description": "Q. 타입스크립트를 왜 써야하는가?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

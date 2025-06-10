@@ -3,7 +3,7 @@
   구현부와 분리하여 타입 추론에 더 용이
 - global.d.ts로 전역적인 선언도 가능
 
-```
+```js
 // global.d.ts
 declare global {
   interface Window {
@@ -14,7 +14,7 @@ declare global {
 
 - 외부 js 라이브러리에 타입 부여도 가능
 
-```
+```js
 // legacyLib.d.ts
 declare module 'legacy-lib' {
   export function init(config: { debug: boolean }): void;

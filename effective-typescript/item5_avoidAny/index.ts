@@ -12,14 +12,14 @@ calculateAge(birthDate); // 에러가 안남
 
 interface Person {
   firstName: string;
-  lastName2: string;
+  lastName: string;
 }
 
 const person: Person = {
   firstName: "John",
-  lastName2: "Doe",
+  lastName: "Doe",
 };
-const formatName = (p: Person) => `${p.firstName} ${p.lastName2}`;
+const formatName = (p: Person) => `${p.firstName} ${p.lastName}`;
 const formatNameAny = (p: any) => `${p.firstName} ${p.lastName}`;
 
 interface ComponentProps {
