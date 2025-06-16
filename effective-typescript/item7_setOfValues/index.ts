@@ -55,3 +55,8 @@ const list2: number[] = tuple2;
 
 const triple: [number, number, number] = [1, 2, 3];
 const double: [number, number] = triple;
+
+type TT = Exclude<string | Date, string | number>;
+const tt2: TT = "hello";
+
+type TT = "";
