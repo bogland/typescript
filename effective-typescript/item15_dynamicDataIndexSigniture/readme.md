@@ -87,6 +87,13 @@ Type Vec3D = {
 };
 */
 
+interface Test {
+  a?: string;
+  b?: string;
+}
+
+const test: Test = { a: "123" };
+
 //매핑된 타입
 type Vec3D_ = { [k in "x" | "y" | "z"]: number };
 

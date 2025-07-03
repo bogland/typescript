@@ -31,6 +31,28 @@ const util = (arr: number[]) => {
   arr.pop();
 };
 
+let testA = {
+  a: "1",
+};
+
+let testB = {
+  a: "1",
+  b: 1,
+};
+testA = testB;
+testB = testA;
+
+type UnionAB = "A" | "B";
+type TypeA = "A";
+
+let _UnionAB: UnionAB = "A" as UnionAB;
+let _TypeA: TypeA = "A" as TypeA;
+
+const params: TypeA = _UnionAB;
+
+const funcTest = (params: TypeA) => {};
+funcTest(_UnionAB);
+funcTest(_TypeA);
 // 좁은 범위는 넓은 범위에 넣을 수 있다.
 // number는 읽고 쓸수 있지만 readonly는 읽을 수 만 있으므로
 // 기능이 많다는 것은 좁은 범위임,
@@ -145,7 +167,24 @@ o.inner.x = 2;
 // obj의 spread 복사본은 문제 없음
 
 let obj: { readonly [key: string]: number } = {};
+let obj_: Readonly<{ [key: string]: number }> = {};
 obj.hi = 1;
 obj = { ...obj, hi: 12 };
 const obj2 = { ...obj };
 obj2.hi = 1;
+
+const obj5: Readonly<{
+  a: {
+    b: number;
+  };
+}> = {
+  a: {
+    b: 1,
+  },
+};
+
+obj5.a = { b: 5 };
+
+const obj5_copy = { ...obj5 };
+obj5_copy.a = { b: 2 };
+obj5_copy.a.b = 5;

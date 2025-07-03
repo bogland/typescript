@@ -75,6 +75,15 @@ Type Vec3D = {
 };
 */
 
+interface Test {
+  a: string;
+  b: string;
+}
+const test: Test = { a: "123", b: "456" };
+
+type TestRecord = Record<"a" | "b", string>;
+const testRecord: TestRecord = { a: "123", b: "456" };
+
 //매핑된 타입
 type Vec3D_ = { [k in "x" | "y" | "z"]: number };
 
